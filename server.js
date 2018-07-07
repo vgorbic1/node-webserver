@@ -1,6 +1,10 @@
 const express = require('express');
 const fs = require('fs');
 
+// Get port from System Environment Variable
+// Use port 3000 by default
+const port = process.env.PORT || 3000;
+
 // Import Handlebars module
 const hbs = require('hbs');
 
@@ -60,7 +64,7 @@ app.get('/help', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000 ...');
+app.listen(port, () => {
+    console.log(`Server is running on port ${port} ...`);
   }
 );
